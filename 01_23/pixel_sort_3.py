@@ -78,7 +78,7 @@ def image_to_cube(file_path, resolution):
             y = j
             r, g, b, a = img.GetPixel(x, y)
             x2, y2, z2 = ct.radial_transform_pixel(r, g, b)
-            location = (x2, y2*100, z2*100)
+            location = (x2, y2, z2)
             cube = center_box(location, 5, 5, 5)
             color = rs.CreateColor(r, g, b, a)
             rs.ObjectColor(cube, color)
