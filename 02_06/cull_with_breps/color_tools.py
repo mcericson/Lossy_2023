@@ -28,6 +28,8 @@ def pixel_color_name(r, g, b):
     if h_degrees >= 360:
         return "red"
 
+
+
 def rgb_to_hsv(r, g, b):
     #source https://www.w3resource.com/python-exercises/math/python-math-exercise-77.php
     r, g, b = r/255.0, g/255.0, b/255.0
@@ -52,6 +54,7 @@ def rgb_to_hsv(r, g, b):
     
     return h, s, v
 
+
 def hsv_to_rgb(h, s, v):
     # https://stackoverflow.com/questions/24852345/hsv-to-rgb-color-conversion
     if s == 0.0: v*=255; return (v, v, v)
@@ -68,6 +71,11 @@ def hsv_to_rgb(h, s, v):
     if i == 4: return (t, p, v)
     if i == 5: return (v, p, q)
 
+
+
+
+
+
 def color_height( r, g, b):
     name = pixel_color_name(r, g, b)
     print (name)
@@ -83,6 +91,7 @@ def color_height( r, g, b):
         return .9
     if name == "blue":
         return 1.0
+
 
 def remap(value, source_min, source_max, target_min, target_max):
     source = source_max - source_min
