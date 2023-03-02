@@ -84,7 +84,7 @@ def rgb_cube(x_num, y_num, z_num, space, brep):
     for i in points:
         point = rs.AddPoint(i)
         new_point = rs.coerce3dpoint(point)
-        if brep_object.IsPointInside(new_point, 0.1, True) == False:
+        if brep_object.IsPointInside(new_point, 0.1, True) == True:
             color = ct.point_to_rgb(i, min, max)
             cube = center_cube(i, float(space/2.0))
             ct.assign_material_color(cube, color)
@@ -101,7 +101,7 @@ def main():
     
     brep = funny_thing(cube_dim/2, cube_dim/3)[0]
     rgb_cube(cube_dim, cube_dim, cube_dim, 1, brep)
-    rs.DeleteObject(brep)
+    #rs.DeleteObject(brep)
     
     vt.create_parallel_view(view_name, (600,600))
     vt.set_display_mode(view_name, display_mode="Rendered")

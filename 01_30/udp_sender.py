@@ -12,6 +12,7 @@ print (udp_ip)
 udp_port = 23456
 
 
+
 def setup():
     size(100,100)
     
@@ -20,9 +21,11 @@ def draw():
     global sock, count, udp_ip, udp_port
 
     count += 1
+    
 
     msg = (str(count)).encode("utf-8")
     sock.sendto(msg, (udp_ip, udp_port))
+    print (msg)
 
 
 

@@ -73,6 +73,7 @@ def radial_projection(angle, object, number, axis, radius):
     for i in range(len(circles)):
         curve = rs.ProjectCurveToSurface([circles[i]], [object], vectors[i])
         curves.append(curve)
+    return curves, vectors
     
 def main():
     #create a box to project onto
@@ -80,8 +81,23 @@ def main():
 
     base_1 = rs.RotatePlane((rs.WorldXYPlane()),180, (1,0,0))
     base_2 = rs.MovePlane(base_1, (0,0,150))
-    cone = rs.AddCone(base_2, 200, 100)
-    radial_projection(60, cone, 10, (0,0,1), 50)
+#    cone_1 = rs.AddCone(base_2, 200, 100)
+#    cone_2 = rs.AddSphere(base_2, 300)
+#    cone_3 = rs.AddTorus(base_2, 400, 100)
+#    cone_4 = rs.AddCone(base_2, 500, 100)
+
+    cone= rs.GetObjects()
+    curves, vectors = radial_projection(60, cone, 10, (0,0,1), 50)
+    point= rs.AddPoint(0,0,0)
+    points = []
+    for i in curves:
+        point = rs.DivideCurve(i, 2, True)[0]
+        points.append(point)
+    for i in range(len(vectors)):
+        point_mv = rs.MoveObject(points[i],vectors[i])
+        path = rs.AddLine((0,0,0), point_mv)
+        rs.ExtrudeCurve(curves[i], path)
+
 
 
 main()
