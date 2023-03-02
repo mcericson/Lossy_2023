@@ -15,7 +15,9 @@ In this tutorial we will learn to create an NFT marker and use it to position a 
 
     Importantly, you will replace "PATH/TO/IMAGE" with the file name of your prepared image ex:
     ` node app.js -i RGB.jpeg`
-
+9. You may have to downgrade your node js version.  To do this enter the following into the command line: 
+$ npm install -g n
+$ n 16.17.0
 
 ## Setup B(Web - up to 1000px image)
 
