@@ -24,4 +24,10 @@ In this tutorial we will learn to create an NFT marker and use it to position a 
 3. Download the marker file.
 
 ## A-Frame and Glitch Implementation
-1. 
+1. To begin, build a basic AR scene with AR starter file. This will aquaint you with the issues of scale, coordinate systems, and animations: https://glitch.com/edit/#!/arjsstarterfile
+2. After completing the last step open and copy the Image Tracking Template:  https://glitch.com/edit/#!/image-tracking-example
+3. Next open the assets tab on your glitch page and upload the three files created by the nft.marker:  file_name.fset, file_name.fset3 and file_name.iset.  To be sure that you see these files make sure that you have the file type in the file explorer set to "all files."
+4. On line 56 of the html there is url: "https://cdn.glitch.global/6cc45ecc-2a01-4d57-b4b5-2ad82a59b750/frame-3609" Note that url ends with the file_name for the .fset, .fset3 and .iset files that you just uploaded.  You can now navigate to your assets page and copy the url for the .fset file. Once you paste in the url, delete everything after the file_name.  In the example file the file_name is "frame-3609"
+5. Input the scale and location values from your basic AR scene and attempt to scale and position the object so that it is visible. You can accomplish this by holding the printed image in front of your webcam.  
+6. Once you have it working send yourself the live site link and test this on your smart phone.
+7. If the image is jumpy this could be due to a a poor image descriptor.  If your image is too simple without enough distinguishing features, or the print resolution is poor, the image will jump around. To read more about marker head here: https://github.com/Carnaux/NFT-Marker-Creator/wiki/Creating-good-markers
