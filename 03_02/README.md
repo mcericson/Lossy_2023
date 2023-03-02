@@ -19,7 +19,7 @@ In this tutorial we will learn to create an NFT marker and use it to position a 
 
 ## Setup B(Web - up to 1000px image)
 
-1. Proceed to website:  https://ar-js-org.github.io/NFT-Marker-Creator/
+1. Proceed to website:  https://carnaux.github.io/NFT-Marker-Creator/#/
 2. Drag and drop your image.
 3. Download the marker file.
 
