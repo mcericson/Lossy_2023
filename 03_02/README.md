@@ -3,7 +3,7 @@
 In this tutorial we will learn to create an NFT marker and use it to position a digital model in relationship to a specific image.  NFT stands for Natural Feature Tracking. The process works by generating a NFT marker file that is based on the features that are specfic to a given image. The markers will then be used to trigger the rendering of the digital model in the augmented reality application. To do this we will use an open source software created by Daniel Fernandes Gonçalves de Oliveira to generate markers. 
 
 ## Setup A (Desktop)
-1. Obtain a free Gihub account: https://github.com/
+1. Obtain a free Github account: https://github.com/
 2. Download and install Github deskstop: https://desktop.github.com/
 3. Log-in to Github Desktop
 4. Download and install vs-code:  https://code.visualstudio.com/Download
