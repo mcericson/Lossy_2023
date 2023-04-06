@@ -1,0 +1,27 @@
+<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+
+<body>
+    <a-scene light="defaultLightsEnabled: false">
+        <a-entity light="type: point;
+              distance: 20.0;
+              castShadow: true;
+              intensity: 5;
+              color: #fffff;
+              shadowCameraVisible: false;
+              shadowMapHeight: 512;
+              shadowMapWidth:512" position="0 10 0"></a-entity>
+        <a-camera look-controls wasd-controls="fly:true" position="0 10 75" cursor="rayOrigin: mouse"></a-camera>
+        <a-box position="1 2.2 -3" rotation="0 45 0" color="#00ff00" event-set__enter="_event: mouseenter; color: #0000FF" event-set__enter__2="_event: mouseenter;  _target: #boxText; visible: true" event-set__leave="_event: mouseleave; color: #ff0000; " event-set__leave__2="_event: mouseleave;  _target: #boxText; visible:false;"
+            event-set__leave__3="_event: mouseleave;  scale: 1 1 1;" event-set__down="_event: mousedown; material.wireframe: true" event-set__up="_event: mouseup; material.wireframe: false" animation="property: rotation; startEvents: click ; to: 360 360 0; 
+                dur: 1000; enabled: true; pauseEvents: mouseleave; loop:  true" animation__2="property: scale; startEvents: click ; to: 3 3 3; 
+                dur: 1000; enabled: true; pauseEvents: mouseleave; loop:  true">
+            <a-text id="boxText" value="This is box" align="center" color="#000000" visible="false" position="0 -0.55 0.55"></a-text>
+        </a-box>
+
+        <a-plane color="#0000ff" height="100" width="100" rotation="-90 0 0" shadow="recieve: true">
+        </a-plane>
+
+        <a-camera> </a-camera>
+    </a-scene>
+</body>
