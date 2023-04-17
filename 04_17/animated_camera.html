@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!Student Name>
+<!Project Name>
+
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #0C3B65" shadow="type: pcfsoft">
+        <a-entity light="type: ambient;color: #0C3B65; intensity: 2.0;"></a-entity>
+        <!a-entity
+        light="type: point;
+          
+                  castShadow: true;
+                   intensity: 10.0;
+                  color: #0C3B65;
+                   shadowCameraVisible: false;"
+        position="0 75 0"
+      >
+        <!/a-entity>
+        <a-entity light="type: point;
+              distance: 145.0;
+              castShadow: true;
+              intensity: 5;
+              color: #0C3B65;
+              shadowCameraVisible: false;
+              shadowMapHeight: 512;
+              shadowMapWidth:512" position="0 0 0"></a-entity>
+        <a-entity></a-entity>
+
+        <a-assets>
+            <!video
+          preload="auto"
+          id="spheres"
+          autoplay
+          loop="true"
+          autplay="true"
+          src="https://cdn.glitch.global/88c115a6-cff9-412d-957b-6ceef0281444/Sphere_36b.mp4?v=1642118782732"
+        >
+            <!/video>
+
+            <!Add Model here>
+            <a-asset-item id="model1" src="https://cdn.glitch.global/88c115a6-cff9-412d-957b-6ceef0281444/Blue.glb?v=1642026779442">
+                <!Add Room Here>
+            </a-asset-item>
+            <a-asset-item id="model2" src="https://cdn.glitch.global/88c115a6-cff9-412d-957b-6ceef0281444/Rotating%20Animation.2blend.glb?v=1642033479195">
+                <!Add Room Here>
+            </a-asset-item>
+            <a-asset-item id="gallery" src="https://cdn.glitch.global/88c115a6-cff9-412d-957b-6ceef0281444/Blue.glb?v=1642026779442">
+            </a-asset-item>
+        </a-assets>
+        <!Control Model Position, Scale and Animation here>
+        <!a-light light="light1" type ="point" color="#0C3B65" position="0 100 0" intensity="2.0" castshadow="true" >
+        <!/a-light>
+        <a-entity gltf-model="#model1" scale="0.15 0.15 0.15" position="0 20 0" shadow="receive: True" animation-mixer></a-entity>
+        <a-entity gltf-model="#model2" scale="0.15 0.15 0.15" position="0 -20 0" shadow="receive: True" animation-mixer></a-entity>
+        <!Control Room Position, Scale and Animation here>
+        <a-entity gltf-model="#gallery" scale="2.0 2.0 2.0" shadow="receive: True" position="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear"></a-entity>
+        <!a-video
+        src="#spheres"
+        width="20"
+        height="20"
+        position="0 0 -20"
+      >
+        <!/a-video>
+
+        <a-entity position="0 0 750" camera="" wasd-controls="fly:true" look-controls="" animation__1="property:position; to: 0 0 0; dur: 10000; dir: alternate; easing: easeInOutQuad; loop: false" animation__2="property:position; from: 0 0 0; to: 0 0 100; dur: 10000; delay: 12000 dir: alternate; easing: easeInOutQuad; loop: false"
+            animation__3="property:rotation; to: 360 360 360; dur: 10000; delay: 24000; dir: alternate; easing: easeInOutQuad; loop: false"></a-entity>
+    </a-scene>
+</body>
+
+</html>
