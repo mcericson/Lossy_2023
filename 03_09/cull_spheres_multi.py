@@ -26,7 +26,7 @@ def random_spheres(points, radius, number):
         spheres.append(sphere)
     return spheres
 
-def cull_with_brep(points, breps):
+def cull_with_breps(points, breps):
     new_points = []
     for i in points:
         point = rs.AddPoint(i)
@@ -67,7 +67,7 @@ def main():
     rs.EnableRedraw(False)
     points = cubic_grid(10,10,10,4)
     spheres = random_spheres(points,10, 10)
-    new_points = cull_with_brep(points, spheres)
+    new_points = cull_with_breps(points, spheres)
     for i in new_points:
         center_cube(i, 2)
     
